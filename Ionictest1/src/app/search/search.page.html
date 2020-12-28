@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-avatar class="center">
+      <img src="assets/malaysia.png" />
+    </ion-avatar>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">MALAYSIA</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar placeholder="search" inputmode="decimal" type="decimal" (ionChange)="filteredItems()" [(ngModel)]="searchTerm" [debounce]="250" showCancelButton="always" color="light"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div *ngFor="let item of items">
+  <ion-item [routerlink]="item.page">
+    <ion-avatar>
+      <img src="{{item.pic}}" />
+    </ion-avatar>
+    {{item.title}}
+  </ion-item>
+</div>
+</ion-content>
